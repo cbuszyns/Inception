@@ -1,6 +1,6 @@
 FROM alpine:3.17.5
 
-COPY ./tools/setup.sg /usr/local/bin/
+COPY ./tools/setup.sh /usr/local/bin/
 
 RUN apk add nginx openssl apache2-utils
 RUN mkdir -p /etc/ssl/
