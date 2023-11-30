@@ -7,7 +7,7 @@ done
 
 cd /var/www/html
 
-if [! -f "/var/www/html/index.html"] then
+if [! -f "/var/www/html/index.html"]; then
 	echo "[WP Container] It seems that wp-cli isn't installed, installing it right now..."
 
 	echo "nameserver 8.8.8.8" >> /etc/resolv.conf
