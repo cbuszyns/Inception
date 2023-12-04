@@ -1,10 +1,11 @@
-FROM alpine:3.17
+FROM alpine:3.17.5
 
 EXPOSE 3306
 
-RUN apk add mysql mysql-client
-#mariadb mariad-client
-COPY tools/setup.sh /usr/local/bin/
+COPY ./tools/setup.sh /usr/local/bin/
+
+RUN apk update && apk add mysql mysql-client
+#mariadb mariadb-client
 
 RUN mkdir /run/mysqld
 

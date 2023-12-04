@@ -27,12 +27,15 @@ echo "installing make..."
 echo "installing vim..."
 @sudo apt install -y vim 2> /dev/null
 
+echo "installing screen..."
+@sudo apt install -y screen 2> /dev/null
+
 echo "installing vscode..."
 @sudo apt install -y vscode 2> /dev/null
 
-echo "Replacing localhost with cbuszyns.42.fr"
-sudo echo "127.0.0.1	cbuszyns.42.fr" >> /etc/hosts
-#sudo -- sh -c -e "echo '127.0.0.1	cbuszyns.42.fr' >> /etc/hosts"
+echo "Replacing localhost with tterribi.42.fr"
+sudo echo "127.0.0.1	tterribi.42.fr" >> /etc/hosts
+#sudo -- sh -c -e "echo '127.0.0.1	tterribi.42.fr' >> /etc/hosts"
 
 echo "base setup finished, starting docker setup..."
 
@@ -64,3 +67,4 @@ echo "Setup completed rboot in 5 seconds..."
 sleep 5
 
 sudo reboot
+
