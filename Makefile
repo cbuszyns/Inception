@@ -3,7 +3,7 @@ NAME= inception
 $(NAME): run
 
 run:
-	sudo docker compose -f ./srcs/docker-compose.yml up
+	sudo docker compose -f ./srcs/docker-compose.yml up -d --build 2> /dev/null
 
 down:
 	sudo docker compose -f ./srcs/docker-compose.yml down

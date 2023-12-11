@@ -49,4 +49,4 @@ fi
 sed "s/127.0.0.1:9000/0.0.0.0:9000/1" -i -r /etc/php81/php-fpm.d/www.conf
 
 echo "[WP Contaier] starting php-fpm"
-#/usr/sbin/php-fpm81 -F
+/usr/sbin/php-fpm81 -F -R

@@ -33,7 +33,7 @@ echo "installing screen..."
 echo "installing vscode..."
 sudo apt install -y vscode 2> /dev/null
 
-echo "Replacing localhost with tterribi.42.fr"
+echo "Replacing localhost with cbuszyns.42.fr"
 sudo echo "127.0.0.1	cbuszyns.42.fr" >> /etc/hosts
 #sudo -- sh -c -e "echo '127.0.0.1	cbuszyns.42.fr' >> /etc/hosts"
 
