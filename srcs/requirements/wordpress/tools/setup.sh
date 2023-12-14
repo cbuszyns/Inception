@@ -12,7 +12,11 @@ if [ ! -f "/var/www/html/index.html" ]; then
 
 	echo "nameserver 8.8.8.8" >> /etc/resolv.conf
 	echo "nameserver 8.8.4.4" >> /etc/resolv.conf
-	
+
+	curl -O https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar
+	php wp-cli.phar --info
+
+	chmod +x wp-cli.phar
 	mv wp-cli.phar /usr/local/bin/wp
 	wp cli update
 
@@ -23,7 +27,7 @@ if [ ! -f "/var/www/html/index.html" ]; then
 		--dbname=${MYSQL_WORDPRESS_DATABASE} 	\
 		--dbuser=${MYSQL_USERNAME}			 	\
 		--dbpass=${MYSQL_PASSWORD} 				\
-		--dbhost=${MYSQL_HOSTNAME} 					\
+		--dbhost=${MYSQL_HOSTNAME} 				\
 		--dbcollate="utf8_general_ci" 			\
 		--allow-root
 	
@@ -40,6 +44,7 @@ if [ ! -f "/var/www/html/index.html" ]; then
 		--role=subscriber \
 		--user_pass=${WORDPRESS_USER_PASSWORD} \
 		--allow-root
+
 fi
 
 sed "s/127.0.0.1:9000/0.0.0.0:9000/1" -i -r /etc/php81/php-fpm.d/www.conf

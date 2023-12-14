@@ -5,7 +5,6 @@ EXPOSE 3306
 COPY ./tools/setup.sh /usr/local/bin/
 
 RUN apk update && apk add mysql mysql-client
-#mariadb mariadb-client
 
 RUN mkdir /run/mysqld
 
