@@ -12,11 +12,7 @@ if [ ! -f "/var/www/html/index.html" ]; then
 
 	echo "nameserver 8.8.8.8" >> /etc/resolv.conf
 	echo "nameserver 8.8.4.4" >> /etc/resolv.conf
-
-	curl -O https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar
-	php wp-cli.phar --info
-
-	chmod +x wp-cli.phar
+	
 	mv wp-cli.phar /usr/local/bin/wp
 	wp cli update
 
@@ -32,7 +28,7 @@ if [ ! -f "/var/www/html/index.html" ]; then
 		--allow-root
 	
 	wp core install \
-		--url=${DOMAIN_NAME}/wordpress \
+		--url=${DOMAIN_NAME} \
 		--title=${WORDPRESS_TITLE} \
 		--admin_user=${WORDPRESS_ADMIN_NAME} \
 		--admin_password=${WORDPRESS_ADMIN_PASSWORD} \
